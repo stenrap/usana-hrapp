@@ -1,0 +1,23 @@
+
+===========
+    SQL
+===========
+
+CREATE DATABASE usana;
+
+
+CREATE TABLE `usana`.`employee` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `firstName` VARCHAR(100) NOT NULL,
+  `lastName` VARCHAR(100) NOT NULL,
+  `address1` VARCHAR(100) NOT NULL,
+  `address2` VARCHAR(100) NULL,
+  `city` VARCHAR(100) NOT NULL,
+  `state` VARCHAR(2) NOT NULL,
+  `zip` VARCHAR(20) NOT NULL,
+  `phone` VARCHAR(20) NOT NULL,
+  `startDate` DATE NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `firstIndex` (`firstName` ASC),
+  INDEX `lastIndex` (`lastName` ASC),
+  INDEX `startDateIndex` (`startDate` ASC));
