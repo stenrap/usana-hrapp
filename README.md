@@ -11,7 +11,14 @@ If you would like to build and deploy this app yourself, follow these instructio
 2. Execute this command in the root directory of the project: mvn package
 3. Locate the file named "usana.war" in the "target" directory and copy it to your $CATALINA_HOME/webapps directory.
 4. Start tomcat if it's not already running.
-5. Tomcat should unpackage the "usana.war" file into a "usana" directory, which means you can access the app by going to http://your.domain/usana
+5. Tomcat should unpackage the "usana.war" file into a "usana" directory.
+6. Set the following properties in the WEB-INF/classes/hibernate.properties:
+   - hibernate.connection.driver_class=[your-driver]
+   - hibernate.connection.url=[your-url]
+   - hibernate.connection.username=[your-username]
+   - hibernate.connection.password=[your-password]
+   - hibernate.dialect=[your-dialect]
+7. Restart tomcat and you can access the app by going to http://your.domain/usana
 
 Development Notes:
 - This app was developed using JDK version 1.7.0_67
