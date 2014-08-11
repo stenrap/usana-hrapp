@@ -5,9 +5,8 @@ Welcome to the Usana HR App developed by Rob Johansen. This app was developed fo
 
 This app is currently running in all its glory on my server at: http://www.e-strux.com/
 
-If you would like to build and deploy this app, follow these instructions:
+If you would like to build and deploy this app, begin by creating an "employee" table in your database. Here's the SQL I used to create mine (in MySQL) after creating a database named "usana":
 
-Begin by creating an "employee" table in your database. Here's the SQL I used to create mine (in MySQL) after creating a database named "usana":
 ```SQL
     CREATE TABLE `usana`.`employee` (
       `id` INT NOT NULL AUTO_INCREMENT,
@@ -25,6 +24,8 @@ Begin by creating an "employee" table in your database. Here's the SQL I used to
       INDEX `lastNameIndex` (`lastName` ASC),
       INDEX `startDateIndex` (`startDate` ASC));
 ```
+
+Then follow these instructions:
 
 1. Clone this repository:
 
