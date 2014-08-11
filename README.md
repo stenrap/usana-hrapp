@@ -5,14 +5,37 @@ Welcome to the Usana HR App developed by Rob Johansen. This app was developed fo
 
 This app is currently running in all its glory on my server at: http://www.e-strux.com/
 
-If you would like to build and deploy this app yourself, follow these instructions:
+If you would like to build and deploy this app, follow these instructions:
 
-1. Clone this repository: git clone https://github.com/stenrap/usana-hrapp.git
-2. Execute this command in the root directory of the project: mvn package
-3. Locate the file named "usana.war" in the "target" directory and copy it to your $CATALINA_HOME/webapps directory.
-4. Start tomcat if it's not already running.
-5. Tomcat should unpackage the "usana.war" file into a "usana" directory.
-6. Set the following properties in the WEB-INF/classes/hibernate.properties:
+1. Create an "employee" table in your database. Here's the SQL I used to create mine (in MySQL) after creating a database named "usana":
+
+    CREATE TABLE `usana`.`employee` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `firstName` VARCHAR(100) NOT NULL,
+      `lastName` VARCHAR(100) NOT NULL,
+      `address1` VARCHAR(100) NOT NULL,
+      `address2` VARCHAR(100) NULL,
+      `city` VARCHAR(100) NOT NULL,
+      `state` VARCHAR(2) NOT NULL,
+      `zip` VARCHAR(20) NOT NULL,
+      `phone` VARCHAR(20) NOT NULL,
+      `startDate` DATE NOT NULL,
+      PRIMARY KEY (`id`),
+      INDEX `firstNameIndex` (`firstName` ASC),
+      INDEX `lastNameIndex` (`lastName` ASC),
+      INDEX `startDateIndex` (`startDate` ASC));
+
+2. Clone this repository:
+
+    git clone https://github.com/stenrap/usana-hrapp.git
+
+3. Execute this command in the root directory of the project:
+
+    mvn package
+
+4. Locate the "usana.war" file in the "target" directory of the project and copy it to your "$CATALINA_HOME/webapps" directory.
+5. Start tomcat so it unpackages the "usana.war" file into a "usana" directory.
+6. Set the following properties in the "usana/WEB-INF/classes/hibernate.properties" file:
    - hibernate.connection.driver_class=[your-driver]
    - hibernate.connection.url=[your-url]
    - hibernate.connection.username=[your-username]
