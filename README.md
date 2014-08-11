@@ -25,6 +25,7 @@ If you would like to build and deploy this app, follow these instructions:
       INDEX `lastNameIndex` (`lastName` ASC),
       INDEX `startDateIndex` (`startDate` ASC));
 ```
+
 2. Clone this repository:
 
     git clone https://github.com/stenrap/usana-hrapp.git
